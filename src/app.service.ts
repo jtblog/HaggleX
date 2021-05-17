@@ -4,12 +4,7 @@ import { HttpService } from '@nestjs/common';
 import { parse } from 'node-html-parser';
 import * as flatted from 'flatted';
 const url = require('url');
-//const _https = require('https');
-//const jsdom = require("jsdom");
-//const { JSDOM } = jsdom;
-//const puppeteer = require('puppeteer');
 const sizeOf = require('image-size');
-//const axios =  require('axios');
 
 @Injectable()
 export class AppService {

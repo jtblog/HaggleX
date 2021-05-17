@@ -4,7 +4,7 @@ export const metadatas = [
         title: 'PayAhead', 
         description: "Pay ahead with PayAhead", 
         link: "https://www.payahead.net",
-        image: { 
+        largest_image: { 
             dimension: { 
                 height: 1080,
                 orientation: 1,
@@ -19,7 +19,7 @@ export const metadatas = [
         title: 'Uridium', 
         description: "Uridium description",
         link: "https://www.uridiumtechnologies.com",
-        image: { 
+        largest_image: { 
             dimension: { 
                 height: 1080,
                 orientation: 1,

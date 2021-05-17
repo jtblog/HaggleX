@@ -15,10 +15,10 @@ export class MetaDataModel {
   description: string;
 
   @Field()
-  image: Image;
+  largest_image: Image;
 }
 
-export class Image {
+class Image {
     @Field()
     src: string;
 
@@ -29,7 +29,7 @@ export class Image {
     dimension: Dimension;
 }
 
-export class Dimension {
+class Dimension {
     @Field()
     height: number;
 

@@ -1,6 +1,7 @@
+import { MetaDataModel } from '../metadata/models/metadata.model';
 
-export const metadatas = [
-    {   id: '1', 
+export var metadatas : MetaDataModel[] = [
+    {   
         title: 'PayAhead', 
         description: "Pay ahead with PayAhead", 
         link: "https://www.payahead.net",
@@ -11,11 +12,11 @@ export const metadatas = [
                 width: 1080,
                 type: 7
             }, 
-            base64: "base64",
+            base64: Buffer.alloc(0).toString('base64'),
             src: "https://"
         }
     },
-    {   id: '2', 
+    {   
         title: 'Uridium', 
         description: "Uridium description",
         link: "https://www.uridiumtechnologies.com",
@@ -26,7 +27,7 @@ export const metadatas = [
                 width: 1080,
                 type: 7
             }, 
-            base64: "base64",
+            base64: Buffer.alloc(0).toString('base64'),
             src: "https://"
         }
     },

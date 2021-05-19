@@ -1,10 +1,18 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import { MetadataService } from './metadata.service';
 import { MetadataController } from './metadata.controller';
 import { MetadataResolver } from './metadata.resolver';
 
+import { CacheModule} from '@nestjs/common';
+
 @Module({
-  providers: [MetadataService, MetadataResolver],
+  imports: [
+    HttpModule,
+    CacheModule.register({
+      ttl: 15
+    })
+  ],
+  providers: [MetadataService, MetadataResolver, ],
   controllers: [MetadataController]
 })
 export class MetadataModule {}

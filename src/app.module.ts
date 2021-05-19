@@ -20,6 +20,8 @@ import { CacheModule} from '@nestjs/common';
     }), 
     GraphQLModule.forRoot({
       autoSchemaFile: true,
+      introspection: true,
+      playground: true
     }), 
     CacheModule.register({
       ttl: 15

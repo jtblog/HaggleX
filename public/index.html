@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - NextJS - Web Scraper</title>
+    <meta name="description" content="Gets the title, description and largest image from a webpage or url">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="#page-top">NextJS - Web Scraper</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                    <li class="nav-item" role="presentation"><a class="nav-link invisible js-scroll-trigger" href="#services">Services</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link invisible js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link invisible js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link invisible js-scroll-trigger" href="#team">Team</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link invisible js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="contact" style="background-image: url(&quot;assets/img/header-bg.jpg&quot;);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading" id="title">TITLE</h2>
+                    <h3 id="desc" class="section-subheading text-muted" style="margin-bottom: 15px;">Description</h3>
+                    <h3 id="link" class="section-subheading text-muted">Link</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form id="contactForm" name="contactForm" novalidate="novalidate">
+                        <div class="form-row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="form-group"><small class="form-text text-danger help-block lead"></small></div>
+                            </div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div><button class="btn btn-primary btn-sm btn-xl text-uppercase" type="submit" id="sendMessageButton" style="padding: 6px 25px;font-size: 15px;">SCRAPE URL</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© NextJS - Web Scraper 2018</span></div>
+                <div class="col-md-4">
+                    <ul class="invisible list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="invisible list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
+</body>
+
+</html>

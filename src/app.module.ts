@@ -7,11 +7,17 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { MetadataModule } from './metadata/metadata.module';
 import { MetadataResolver } from './metadata/metadata.resolver';
 
+import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
+
 import { CacheModule} from '@nestjs/common';
 
 @Module({
   imports: [
     HttpModule, MetadataModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+    }), 
     GraphQLModule.forRoot({
       autoSchemaFile: true,
     }), 

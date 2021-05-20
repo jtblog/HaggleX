@@ -10,7 +10,7 @@ import { MetadataResolver } from './metadata/metadata.resolver';
 import { join } from 'path';
 import { ServeStaticModule } from '@nestjs/serve-static';
 
-//import { CacheModule} from '@nestjs/common';
+import { CacheModule} from '@nestjs/common';
 
 @Module({
   imports: [
@@ -23,9 +23,9 @@ import { ServeStaticModule } from '@nestjs/serve-static';
       introspection: true,
       playground: true
     }), 
-    /*CacheModule.register({
+    CacheModule.register({
       ttl: 60
-    })*/
+    })
   ],
   controllers: [AppController, MetadataController],
   providers: [AppService, MetadataService, MetadataResolver],

@@ -40,13 +40,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form id="contactForm" name="contactForm" novalidate="novalidate">
+                    <form id="scrapeurl_form" name="scrapeurl_form" novalidate="novalidate">
                         <div class="form-row justify-content-center">
                             <div class="col-md-6">
-                                <div class="form-group"><small class="form-text text-danger help-block lead"></small></div>
+                                <div class="form-group"><input class="form-control" type="url" id="url" placeholder="https://"><small class="form-text text-danger help-block lead"></small></div>
                             </div>
                             <div class="col-lg-12 text-center">
-                                <div id="success"></div><button class="btn btn-primary btn-sm btn-xl text-uppercase" type="submit" id="sendMessageButton" style="padding: 6px 25px;font-size: 15px;">SCRAPE URL</button></div>
+                                <div id="success"></div><button class="btn btn-primary btn-sm btn-xl text-uppercase" type="submit" id="scrape_btn" style="padding: 6px 25px;font-size: 15px;">SCRAPE URL</button></div>
                         </div>
                     </form>
                 </div>
@@ -56,8 +56,9 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© NextJS - Web Scraper 2018</span></div>
-                <div class="col-md-4">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© NextJS - Web Scraper&nbsp;<span id="year">2020</span></span>
+                </div>
+                <div class="col-md-4"><span class="copyright">A Joseph T. Obagbemisoye</span>
                     <ul class="invisible list-inline social-buttons">
                         <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
                         <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -77,6 +78,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/agency.js"></script>
+    <script src="assets/js/app.js"></script>
 </body>
 
 </html>

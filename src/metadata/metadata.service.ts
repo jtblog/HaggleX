@@ -6,7 +6,7 @@ import * as flatted from 'flatted';
 const url = require('url');
 const sizeOf = require('image-size');
 
-import { metadatas } from '../mocks/metadatas.mock';
+import { METADATAS } from '../mocks/metadatas.mock';
 import { MetaDataModel} from './models/metadata.model';
 import { CreateMetaDataDTO } from '../metadata/dto/create-metadata.dto';
 import { Cache } from 'cache-manager';
@@ -18,7 +18,7 @@ export class MetadataService {
 
     constructor(@Inject(CACHE_MANAGER) private cacheManager : Cache, private readonly http: HttpService){}
     
-    metadatas = metadatas;
+    metadatas = METADATAS;
 
     async getDimension(src: string) {
         return this.http.get(
@@ -74,7 +74,16 @@ export class MetadataService {
       }
 
     getMetaDatas(): Promise<MetaDataModel[]> {
-        return new Promise(resolve => {
+        return new Promise(async resolve => {
+            let kys = this.cacheManager.store.keys;
+            for(var i = 0; i < kys.length; i++){
+                let _get = JSON.parse(await this.cacheManager.get(kys[i]));
+                let metadata = plainToClass(MetaDataModel, _get);
+
+                let index = this.metadatas.findIndex(mt => mt.link === kys[i]);
+                this.metadatas.splice(1, index);
+                this.metadatas.push(metadata);
+            }
             resolve(this.metadatas);
         });
     }
@@ -89,7 +98,7 @@ export class MetadataService {
                 if (cache_meta) {
                     metadata = plainToClass(MetaDataModel, cache_meta);
                 } else {
-                    cache_meta = this.parse_url(link)
+                    cache_meta = this.parse_url(link);
                     await this.cacheManager.set(link, JSON.stringify(cache_meta));
                     metadata = plainToClass(MetaDataModel, cache_meta);
                     this.metadatas.push(metadata);

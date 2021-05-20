@@ -1,6 +1,6 @@
 import { MetaDataModel } from '../metadata/models/metadata.model';
 
-export var metadatas : MetaDataModel[] = [
+export var METADATAS : MetaDataModel[] = [
     {   
         title: 'PayAhead', 
         description: "Pay ahead with PayAhead", 

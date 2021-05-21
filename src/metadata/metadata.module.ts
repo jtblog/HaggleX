@@ -9,7 +9,7 @@ import { CacheModule} from '@nestjs/common';
   imports: [
     HttpModule,
     CacheModule.register({
-      ttl: 60
+      ttl: 120
     })
   ],
   providers: [MetadataService, MetadataResolver, ],

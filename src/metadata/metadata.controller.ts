@@ -4,10 +4,13 @@ import { MetaDataModel} from './models/metadata.model';
 import { CreateMetaDataDTO } from '../metadata/dto/create-metadata.dto';
 import * as flatted from 'flatted';
 
+import { Inject, CACHE_MANAGER } from '@nestjs/common';
+import { Cache } from 'cache-manager';
+
 @Controller('metadata')
 export class MetadataController {
 
-    constructor(private metadataService: MetadataService) { }
+    constructor(@Inject(CACHE_MANAGER) private cacheManager: Cache, private metadataService: MetadataService) { }
 
     @Get()
     async getMetaDatas() {
@@ -17,11 +20,12 @@ export class MetadataController {
 
     @Get()
     async getMetaDataByLink(@Query() query) {
+        
         var lnk = decodeURI(query.link).toString();
         const metadata = await this.metadataService.getMetaDataByLink(lnk);
         return metadata;
     }
-
+s
     @Get(':link')
     async getMetaDataByLink2(@Param('link') link) {
         var lnk = decodeURI(link).toString();

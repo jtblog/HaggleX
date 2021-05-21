@@ -24,7 +24,7 @@ import { CacheModule} from '@nestjs/common';
       playground: true
     }), 
     CacheModule.register({
-      ttl: 60
+      ttl: 120
     })
   ],
   controllers: [AppController, MetadataController],

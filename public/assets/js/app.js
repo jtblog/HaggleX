@@ -30,20 +30,25 @@ window.scrape_url = function(){
 			if ( this.status == 200 ) {  
 		      	submit_btn.innerHTML = "Scrape Url";
 		      	url.value = "https://";
-                var data = JSON.parse(this.responseText);
-                if(!(data == null || data == undefined)){
-                    title.innerHTML = data['title'];
-                    desc.innerHTML = data['description'];
-                    link.innerHTML = data['link'];
-                    try{
-                        var img_src = data["largest_image"]["src"];
-                        largest_image.style.backgroundImage = "url(" + img_src + ")";
-                    }catch(e){
-                        alert("Could not retrieve any image");
+                try{
+                    var data = JSON.parse(this.responseText);
+                    if(!(data == null || data == undefined)){
+                        title.innerHTML = data['title'];
+                        desc.innerHTML = data['description'];
+                        link.innerHTML = data['link'];
+                        try{
+                            var img_src = data["largest_image"]["src"];
+                            largest_image.style.backgroundImage = "url(" + img_src + ")";
+                        }catch(e){
+                            alert("Could not retrieve any image");
+                        }
+                    }else{
+                        link.innerHTML = data['Could not scrape url'];
                     }
-                }else{
-                    link.innerHTML = data['Could not scrape url'];
+                }catch(e){
+                    alert("Could not parse/retrieve website data");
                 }
+                
                 submit_btn.innerHTML = "Scrape Url";
 	      	} else { 
 		        submit_btn.innerHTML = "Scrape Url";

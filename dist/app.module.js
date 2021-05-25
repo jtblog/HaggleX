@@ -9,35 +9,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const metadata_service_1 = require("./metadata/metadata.service");
-const metadata_controller_1 = require("./metadata/metadata.controller");
-const graphql_1 = require("@nestjs/graphql");
-const metadata_module_1 = require("./metadata/metadata.module");
-const metadata_resolver_1 = require("./metadata/metadata.resolver");
 const path_1 = require("path");
 const serve_static_1 = require("@nestjs/serve-static");
 const common_2 = require("@nestjs/common");
+const in_memory_db_1 = require("@nestjs-addons/in-memory-db");
+const in_memory_db_2 = require("@nestjs-addons/in-memory-db");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
-            common_1.HttpModule, metadata_module_1.MetadataModule,
+            common_1.HttpModule,
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: path_1.join(__dirname, '..', 'public'),
             }),
-            graphql_1.GraphQLModule.forRoot({
-                autoSchemaFile: true,
-                introspection: true,
-                playground: true
-            }),
+            in_memory_db_1.InMemoryDBModule,
             common_2.CacheModule.register({
                 ttl: 120
-            })
+            }),
         ],
-        controllers: [app_controller_1.AppController, metadata_controller_1.MetadataController],
-        providers: [app_service_1.AppService, metadata_service_1.MetadataService, metadata_resolver_1.MetadataResolver],
+        controllers: [app_controller_1.AppController],
+        providers: [in_memory_db_2.InMemoryDBService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

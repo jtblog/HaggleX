@@ -1,1 +1,0 @@
-{"version":3,"file":"image.js","sourceRoot":"","sources":["../../../src/metadata/models/image.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAAwD;AACxD,2CAAuC;AAGvC,IAAa,KAAK,GAAlB,MAAa,KAAK;CASjB,CAAA;AAPG;IADC,eAAK,EAAE;;kCACI;AAGZ;IADC,eAAK,EAAE;;qCACO;AAGf;IADC,eAAK,CAAC,IAAI,CAAC,EAAE,CAAC,qBAAS,CAAC;8BACd,qBAAS;wCAAC;AARZ,KAAK;IADjB,oBAAU,EAAE;GACA,KAAK,CASjB;AATY,sBAAK"}

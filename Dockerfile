@@ -1,7 +1,18 @@
-FROM node:12
+# base image
+FROM node:latest
+
 WORKDIR /app
 ADD package.json /app/package.json
+
 RUN npm install
-ADD . /apps
-EXPOSE 300
-CMD ["npm", "run", "start"]
+#RUN ["npm", "install"]
+
+ADD . /app
+
+COPY . .
+RUN ["npm", "run", "build"]
+
+#EXPOSE 3000
+
+#CMD [ "/bin/ls", "-l" ]
+CMD ["npm", "run", "start:prod"]

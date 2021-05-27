@@ -1,3 +1,60 @@
+## Visual testing
+
+Live version of this app can be viewed and tested at
+<a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/metadata/</a> <br><br>
+
+Or using postman/curl/browser sent a get request to 
+<a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/metadata/urlencoded</a> <br><br>
+
+<strong>Example: </strong>
+<a href="https://nestjs-webscraper.herokuapp.com/metadata/https%3A%2F%2Fwww.facebook.com" target="blank">https://nestjs-webscraper.herokuapp.com/metadata/https%3A%2F%2Fwww.facebook.com</a> will yield a return in this sample json format. Result is saved and expires in 2 minute for that particular url input
+
+```json
+
+{   
+    id: '1',
+    title: 'PayAhead', 
+    description: "Pay ahead with PayAhead", 
+    link: "https://www.payahead.net",
+    time_added: 1621945809173,
+    largest_image: { 
+        dimension: { 
+            height: 1080,
+            orientation: 1,
+            width: 1080,
+            type: 7
+        }, 
+        base64: Buffer.alloc(0).toString('base64'),
+        src: "https://"
+    }
+}
+```
+Just like in the image below
+<img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_3.png" alt="NestJS - Web Scraper" />
+<br><br>
+
+Data is cached for 2 minutes. Fresh data of url is gotten after 2 minutes.<br><br>
+
+To get a list of cached urls/objects. Send a get request to 
+<a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/metadata</a>
+
+## Some results
+
+<img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_1.png" alt="NestJS - Web Scraper" /> <br>
+<img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_2.png" alt="NestJS - Web Scraper" /> <br>
+
+## App was dockerized and deployed on Heroku as a docker container
+
+You can see that from the image below
+<img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_4.png" alt="NestJS - Web Scraper" /> <br><br>
+
+1. To use on your local computer, git clone this repo.<br>
+2. Navigate to root directory through Command prompt.<br>
+3. Run npm install<br>
+4. Run npm build<br>
+5. Run npm run start or start:prod<br><br><br><br>
+
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>

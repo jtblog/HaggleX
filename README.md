@@ -1,7 +1,7 @@
 ## Visual testing
 
-Live version of this app can be viewed and tested at
-<a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/metadata/</a> <br><br>
+App is hosted at
+<a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/</a> <br><br>
 
 Or using postman/curl/browser sent a get request to 
 <a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/metadata/urlencoded</a> <br><br>
@@ -12,20 +12,20 @@ Or using postman/curl/browser sent a get request to
 ```json
 
 {   
-    id: '1',
-    title: 'PayAhead', 
-    description: "Pay ahead with PayAhead", 
-    link: "https://www.payahead.net",
-    time_added: 1621945809173,
-    largest_image: { 
-        dimension: { 
-            height: 1080,
-            orientation: 1,
-            width: 1080,
-            type: 7
+    "id": "1",
+    "title": "PayAhead", 
+    "description": "Pay ahead with PayAhead", 
+    "link": "https://www.payahead.net",
+    "time_added": 1621945809173,
+    "largest_image": { 
+        "dimension": { 
+            "height": 1080,
+            "orientation": 1,
+            "width": 1080,
+            "type": 7
         }, 
-        base64: Buffer.alloc(0).toString('base64'),
-        src: "https://"
+        "base64": "Buffer.alloc(0).toString('base64')",
+        "src": "https://largest_image"
     }
 }
 ```
@@ -33,15 +33,17 @@ Just like in the image below
 <img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_3.png" alt="NestJS - Web Scraper" />
 <br><br>
 
-Data is cached for 2 minutes. Fresh data of url is gotten after 2 minutes.<br><br>
+Data is cached for 2 minutes. Fresh metadata of url is gotten after 2 minutes.<br><br>
 
-To get a list of cached urls/objects. Send a get request to 
+To get a list of cached metadata. Send a get request to 
 <a href="https://nestjs-webscraper.herokuapp.com/" target="blank">https://nestjs-webscraper.herokuapp.com/metadata</a>
 
 ## Some results
 
 <img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_1.png" alt="NestJS - Web Scraper" /> <br>
 <img src="https://raw.githubusercontent.com/jtblog/HaggleX/main/Screenshot_2.png" alt="NestJS - Web Scraper" /> <br>
+
+Notice that the background image changes to the largest image of the webpage you are trying to parse/scrape. <br><br>
 
 ## App was dockerized and deployed on Heroku as a docker container
 
@@ -131,3 +133,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+# Thank you

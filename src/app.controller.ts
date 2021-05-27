@@ -24,7 +24,7 @@ export class AppController {
   }
 
   metadatas = METADATAS;
-  ttl = 1000 * 60;
+  ttl = 2 * 1000 * 60;
 
   async getDimension(src: string) {
     return this.http.get(

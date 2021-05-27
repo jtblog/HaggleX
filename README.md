@@ -52,7 +52,8 @@ You can see that from the image below
 2. Navigate to root directory through Command prompt.<br>
 3. Run npm install<br>
 4. Run npm build<br>
-5. Run npm run start or start:prod<br><br><br><br>
+5. Run npm run start or start:prod<br>
+6. On sucessful attempts of Step 3, 4 and 5. Open your browser and visit <a href="https://localhost:3000/" target="blank">https://localhost:3000/</a> <br><br><br><br>
 
 
 <p align="center">
